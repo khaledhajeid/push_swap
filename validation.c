@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/02 18:05:17 by kal-haj-          #+#    #+#             */
-/*   Updated: 2025/11/13 18:23:02 by kal-haj-         ###   ########.fr       */
+/*   Created: 2025/11/13 18:23:17 by kal-haj-          #+#    #+#             */
+/*   Updated: 2025/11/13 18:27:03 by kal-haj-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int checks(int argc, char **argv)
 {
-    if (!checks(argc, argv))
-    {
-        ft_printf("Error");
-        return (1);
-    }
-    // ft_printf("Done, the stack sorted");
-    return (0);
+    (void)argv;
+    if (argc < 2)
+        return (0);
+    return (1);
 }
