@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kal-haj- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 18:45:58 by kal-haj-          #+#    #+#             */
-/*   Updated: 2025/08/10 19:10:52 by kal-haj-         ###   ########.fr       */
+/*   Updated: 2025/11/20 17:55:45 by kal-haj-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "libft.h"
 
-static int	ft_space(char c)
+int	ft_space(char c)
 {
 	if ((c >= '\t' && c <= '\r') || c == ' ')
 		return (1);

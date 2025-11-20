@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kal-haj- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/09 20:26:47 by kal-haj-          #+#    #+#              #
-#    Updated: 2025/08/09 20:26:52 by kal-haj-         ###   ########.fr        #
+#    Updated: 2025/11/20 18:19:29 by kal-haj-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ SRC	= ft_memset.c \
 		ft_putnbr_printf.c \
 		ft_putnbr_unsigned_printf.c \
 		ft_putptr_printf.c \
-		ft_putstr_printf.c
+		ft_putstr_printf.c \
 
 OBJ	= $(SRC:.c=.o)
 
