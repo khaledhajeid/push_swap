@@ -6,13 +6,13 @@
 /*   By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:23:17 by kal-haj-          #+#    #+#             */
-/*   Updated: 2025/11/20 18:38:18 by kal-haj-         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:37:24 by kal-haj-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_atol(char *nptr)
+long ft_atol(char *nptr)
 {
 	int	sign;
 	int	i;
@@ -59,43 +59,62 @@ int check_dup(int num_index, int *numbers)
 int check_overflow_and_dup(int argc, char **argv)
 {
     int i;
-    int numbers[argc - 1];
+    int *numbers;
     long num;
     
+    numbers = malloc((argc - 1) * sizeof(int));
+    if (!numbers)
+        return (0);
     i = 1;
     while(argv[i])
     {
-        num = atol(argv[i]);
+        num = ft_atol(argv[i]);
         if(num >  2147483647 || num < -2147483648)
+        {
+            free(numbers);
             return (0);
-        numbers[i - 1] = num;
-        i++;
+        }
+        numbers[i++ - 1] = num;
     }
     if(!check_dup(argc - 1, numbers))
+    {
+        free(numbers);
         return (0);
+    }
+    free(numbers);
     return (1);
 }
 
-int checks(int argc, char **argv)
+int is_valid_number(char *s)
 {
     int i;
-    int j;
 
-    i = 1;
-    if (argc < 2)
+    i = 0;
+    if (!s[i])
         return (0);
-    while(argv[i])
+    if (s[i] == '+' || s[i] == '-')
+        i++;
+    if (!ft_isdigit(s[i]))
+        return (0);
+    while (s[i])
     {
-        j = 0;
-        while(argv[i][j])
-        {
-            if (argv[i][j] < '0' || argv[i][j] > '9')
-                return (0);
-            j++;
-        }
+        if (!ft_isdigit(s[i]))
+            return (0);
         i++;
     }
-    if (!check_overflow_and_dup(argc, argv))
-        return (0);
+    return (1);
+}
+
+int check_is_valid(char **argv)
+{
+    int i;
+
+    i = 1;
+    while (argv[i])
+    {
+        if (!is_valid_number(argv[i]))
+            return (0);
+        i++;
+    }
     return (1);
 }
