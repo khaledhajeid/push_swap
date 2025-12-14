@@ -6,7 +6,7 @@
 /*   By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 18:23:17 by kal-haj-          #+#    #+#             */
-/*   Updated: 2025/12/13 17:37:24 by kal-haj-         ###   ########.fr       */
+/*   Updated: 2025/12/14 19:13:38 by kal-haj-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int check_overflow_and_dup(int argc, char **argv)
     while(argv[i])
     {
         num = ft_atol(argv[i]);
-        if(num >  2147483647 || num < -2147483648)
+        if(num > 2147483647 || num < -2147483648)
         {
             free(numbers);
             return (0);

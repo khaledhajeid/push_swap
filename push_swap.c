@@ -6,7 +6,7 @@
 /*   By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 18:05:17 by kal-haj-          #+#    #+#             */
-/*   Updated: 2025/12/13 17:40:46 by kal-haj-         ###   ########.fr       */
+/*   Updated: 2025/12/14 20:02:11 by kal-haj-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,18 @@ int checks(int argc, char **argv)
 }
 int main(int argc, char **argv)
 {
+    t_stack *stack_a;
+    
     if (argc < 2)
         return (0);
     if (!checks(argc, argv))
     {
-        ft_printf("Error");
+        ft_printf("Error\n");
         return (1);
     }
+    stack_a = create_stack(argv);
+    if (!stack_a)
+        return (1);
+    assign_index(stack_a);
     return (0);
 }
