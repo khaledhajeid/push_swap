@@ -1,6 +1,6 @@
 NAME = push_swap
 CFLAGS = -Wall -Werror -Wextra
-SRC = push_swap.c validation.c handle_stack.c handle_index.c
+SRC = push_swap.c validation.c handle_stack.c handle_index.c sorting.c operations.c
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
