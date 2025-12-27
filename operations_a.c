@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   operations_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khaledhajeid <khaledhajeid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 19:24:43 by kal-haj-          #+#    #+#             */
-/*   Updated: 2025/12/15 20:11:12 by kal-haj-         ###   ########.fr       */
+/*   Updated: 2025/12/27 03:08:44 by khaledhajei      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void sa(t_stack **stack)
     t_stack *first;
     t_stack *second;
 
-    if(!stack || !*stack || !(*stack)->next)
+    if(!*stack || !(*stack)->next)
         return ;
     first = *stack;
     second = first->next;
@@ -32,7 +32,7 @@ void ra(t_stack **stack)
     t_stack *first;
     t_stack *last;
 
-    if(!stack || !*stack || !(*stack)->next)
+    if(!*stack || !(*stack)->next)
         return ;
     first = *stack;
     *stack = first->next;
@@ -49,7 +49,7 @@ void rra(t_stack **stack)
     t_stack *prev;
     t_stack *last;
 
-    if(!stack || !*stack || !(*stack)->next)
+    if(!*stack || !(*stack)->next)
         return ;
     last = *stack;
     while (last->next)
@@ -61,4 +61,17 @@ void rra(t_stack **stack)
     last->next = *stack;
     *stack = last;
     ft_printf("rra\n");
+}
+
+void pa(t_stack **stack_a, t_stack **stack_b)
+{
+    t_stack *current;
+
+    if (!*stack_b)
+        return;
+    current = *stack_b;
+    *stack_b = (*stack_b)->next;
+    current->next = *stack_a;
+    *stack_a = current;
+    ft_printf("pa\n");
 }

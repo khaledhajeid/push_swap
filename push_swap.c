@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kal-haj- <kal-haj-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: khaledhajeid <khaledhajeid@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/02 18:05:17 by kal-haj-          #+#    #+#             */
-/*   Updated: 2025/12/15 20:37:38 by kal-haj-         ###   ########.fr       */
+/*   Updated: 2025/12/27 03:09:55 by khaledhajei      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void free_stack(t_stack **stack)
+{
+    t_stack *tmp;
+
+    while (*stack)
+    {
+        tmp = *stack;
+        *stack = (*stack)->next;
+        free(tmp);
+    }
+}
 
 int checks(int argc, char **argv)
 {
@@ -23,7 +35,10 @@ int checks(int argc, char **argv)
 int main(int argc, char **argv)
 {
     t_stack *stack_a;
+    t_stack *stack_b;
     
+    stack_a = NULL;
+    stack_b = NULL;
     if (argc < 2)
         return (0);
     if (!checks(argc, argv))
@@ -35,6 +50,7 @@ int main(int argc, char **argv)
     if (!stack_a)
         return (1);
     assign_index(stack_a);
-    sort(&stack_a);
+    sort(&stack_a, &stack_b);
+    free_stack(&stack_a);
     return (0);
 }
