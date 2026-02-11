@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/khaledhajeid/Documents/Programming/push_swap",
+      "program": "/Users/khaledhajeid/Documents/Programming/push_swap/build/Debug/outDebug"
+    }
+  ]
+}
